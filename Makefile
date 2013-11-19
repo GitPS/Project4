@@ -22,9 +22,9 @@ CFLAGS=-Wall -O0 -g
 # Linker Flags
 #
 # Linker flag for Mac OS X
-LDFLAGS=-lm
+#LDFLAGS=-lm
 # Linker flag for Linux
-#LDFLAGS=-lm -lrt
+LDFLAGS=-lm -lrt
 
 #
 # All of the programs to compile
