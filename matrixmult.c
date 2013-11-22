@@ -17,74 +17,165 @@ int main(int argc, char * argv[]) {
     support_init();
     
     /* run_experiment_ijk */
-    printf("Running run_experiment_ijk()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_ijk()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_ijk(matrix_a, matrix_b, matrix_c, N);
-        printf("megaFLOPS = %f\n", (2 * N * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (2 * N * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix_a != NULL){
+            free(matrix_a);
+            matrix_a = NULL;
+        }
+        if(matrix_b != NULL){
+            free(matrix_b);
+            matrix_b = NULL;
+        }
+        if(matrix_c != NULL){
+            free(matrix_c);
+            matrix_c = NULL;
+        }
     }
     
     /* run_experiment_ikj */
-    printf("---------------------------\n");
-    printf("Running run_experiment_ikj()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_ikj()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_ikj(matrix_a, matrix_b, matrix_c, N);
-        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (2 * N * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix_a != NULL){
+            free(matrix_a);
+            matrix_a = NULL;
+        }
+        if(matrix_b != NULL){
+            free(matrix_b);
+            matrix_b = NULL;
+        }
+        if(matrix_c != NULL){
+            free(matrix_c);
+            matrix_c = NULL;
+        }
     }
     
     /* run_experiment_kji */
-    printf("---------------------------\n");
-    printf("Running run_experiment_kji()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_kji()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_kji(matrix_a, matrix_b, matrix_c, N);
-        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (2 * N * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix_a != NULL){
+            free(matrix_a);
+            matrix_a = NULL;
+        }
+        if(matrix_b != NULL){
+            free(matrix_b);
+            matrix_b = NULL;
+        }
+        if(matrix_c != NULL){
+            free(matrix_c);
+            matrix_c = NULL;
+        }
     }
     
     /* run_experiment_kij */
-    printf("---------------------------\n");
-    printf("Running run_experiment_kij()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_kij()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_kij(matrix_a, matrix_b, matrix_c, N);
-        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (2 * N * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix_a != NULL){
+            free(matrix_a);
+            matrix_a = NULL;
+        }
+        if(matrix_b != NULL){
+            free(matrix_b);
+            matrix_b = NULL;
+        }
+        if(matrix_c != NULL){
+            free(matrix_c);
+            matrix_c = NULL;
+        }
     }
     
     /* run_experiment_jki */
-    printf("---------------------------\n");
-    printf("Running run_experiment_jki()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_jki()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_jki(matrix_a, matrix_b, matrix_c, N);
-        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (2 * N * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix_a != NULL){
+            free(matrix_a);
+            matrix_a = NULL;
+        }
+        if(matrix_b != NULL){
+            free(matrix_b);
+            matrix_b = NULL;
+        }
+        if(matrix_c != NULL){
+            free(matrix_c);
+            matrix_c = NULL;
+        }
     }
     
     /* run_experiment_jik */
-    printf("---------------------------\n");
-    printf("Running run_experiment_jik()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_jik()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_jik(matrix_a, matrix_b, matrix_c, N);
-        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (2 * N * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix_a != NULL){
+            free(matrix_a);
+            matrix_a = NULL;
+        }
+        if(matrix_b != NULL){
+            free(matrix_b);
+            matrix_b = NULL;
+        }
+        if(matrix_c != NULL){
+            free(matrix_c);
+            matrix_c = NULL;
+        }
     }
     
     /* Cleanup */

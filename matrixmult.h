@@ -6,7 +6,7 @@
  */
 #include "support.h"
 
-int MAX_ITERS = 4;
+int MAX_ITERS = 1;
 
 /*
  * TODO

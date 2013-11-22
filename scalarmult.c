@@ -16,22 +16,37 @@ int main(int argc, char * argv[]) {
     support_init();
     
     /* run_experiment_ij */
-    printf("Running run_experiment_ij()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_ij()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix, N);
         time = run_experiment_ij(matrix, scalar, N);
-        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (1 * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix != NULL){
+            free(matrix);
+            matrix = NULL;
+        }
     }
     
     /* run_experiment_ji */
-    printf("---------------------------\n");
-    printf("Running run_experiment_ji()\n");
+    printf("\n---------------------------\n\n");
+    printf("Executing: run_experiment_ji()\n\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix, N);
         time = run_experiment_ji(matrix, scalar, N);
-        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("megaFLOPS = %f\n\n", (1 * N * N) / time / 1000000);
         N = N*2;
+        
+        /* Cleanup */
+        if(matrix != NULL){
+            free(matrix);
+            matrix = NULL;
+        }
     }
     
     /* Cleanup */
