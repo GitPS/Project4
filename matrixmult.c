@@ -178,21 +178,6 @@ int main(int argc, char * argv[]) {
         }
     }
     
-    /* Cleanup */
-    if(matrix_a != NULL){
-        free(matrix_a);
-        matrix_a = NULL;
-    }
-    if(matrix_b != NULL){
-        free(matrix_b);
-        matrix_b = NULL;
-    }
-    if(matrix_c != NULL){
-        free(matrix_c);
-        matrix_c = NULL;
-    }
-    
-
     // Finalize the support library
     support_finalize();
 
