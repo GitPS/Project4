@@ -10,7 +10,7 @@ int main(int argc, char * argv[]) {
     int N;
     double time;
     mtype_t *matrix = NULL;
-    mtype_t scalar = 2;
+    mtype_t scalar = 1;
     
     // Initialize the support library
     support_init();
@@ -20,16 +20,17 @@ int main(int argc, char * argv[]) {
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix, N);
         time = run_experiment_ij(matrix, scalar, N);
-        printf("FLOPS = %f\n", (1 * N * N) / time);
+        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
         N = N*2;
     }
     
     /* run_experiment_ji */
+    printf("---------------------------\n");
     printf("Running run_experiment_ji()\n");
     for(N = 2; N <= 1024;){
         allocate_matrix(&matrix, N);
         time = run_experiment_ji(matrix, scalar, N);
-        printf("FLOPS = %f\n", (1 * N * N) / time);
+        printf("megaFLOPS = %f\n", (1 * N * N) / time / 1000000);
         N = N*2;
     }
     
@@ -73,7 +74,7 @@ double run_experiment_ji(mtype_t *matrix, mtype_t scalar, int N){
     for(iter = 0; iter < MAX_ITERS; ++iter){
         for(j = 0; j < N; ++j){
             for(i = 0; i < N; ++i){
-                matrix[ GET_INDEX(j, i, N) ] = scalar * matrix[ GET_INDEX(j, i, N) ];
+                matrix[ GET_INDEX(i, j, N) ] = scalar * matrix[ GET_INDEX(i, j, N) ];
             }
         }
     }
