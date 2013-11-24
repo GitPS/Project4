@@ -1,0 +1,210 @@
+
+---------------------------
+
+Executing: run_experiment_ijk()
+
+Matrix Size in bytes: 16
+megaFLOPS = 70.808993
+
+Matrix Size in bytes: 32
+megaFLOPS = 91.677410
+
+Matrix Size in bytes: 64
+megaFLOPS = 82.747809
+
+Matrix Size in bytes: 128
+megaFLOPS = 92.634568
+
+Matrix Size in bytes: 256
+megaFLOPS = 400.454006
+
+Matrix Size in bytes: 512
+megaFLOPS = 423.322796
+
+Matrix Size in bytes: 1024
+megaFLOPS = 415.431480
+
+Matrix Size in bytes: 2048
+megaFLOPS = 390.766633
+
+Matrix Size in bytes: 4096
+megaFLOPS = 334.416359
+
+Matrix Size in bytes: 8192
+megaFLOPS = 286.676366
+
+
+---------------------------
+
+Executing: run_experiment_ikj()
+
+Matrix Size in bytes: 16
+megaFLOPS = 208.496221
+
+Matrix Size in bytes: 32
+megaFLOPS = 387.186546
+
+Matrix Size in bytes: 64
+megaFLOPS = 360.637032
+
+Matrix Size in bytes: 128
+megaFLOPS = 403.017119
+
+Matrix Size in bytes: 256
+megaFLOPS = 409.885537
+
+Matrix Size in bytes: 512
+megaFLOPS = 415.208862
+
+Matrix Size in bytes: 1024
+megaFLOPS = 418.986177
+
+Matrix Size in bytes: 2048
+megaFLOPS = 422.684575
+
+Matrix Size in bytes: 4096
+megaFLOPS = 425.008051
+
+Matrix Size in bytes: 8192
+megaFLOPS = 425.278512
+
+
+---------------------------
+
+Executing: run_experiment_kji()
+
+Matrix Size in bytes: 16
+megaFLOPS = 314.095014
+
+Matrix Size in bytes: 32
+megaFLOPS = 344.354470
+
+Matrix Size in bytes: 64
+megaFLOPS = 311.255662
+
+Matrix Size in bytes: 128
+megaFLOPS = 361.325153
+
+Matrix Size in bytes: 256
+megaFLOPS = 378.512748
+
+Matrix Size in bytes: 512
+megaFLOPS = 387.625430
+
+Matrix Size in bytes: 1024
+megaFLOPS = 392.167169
+
+Matrix Size in bytes: 2048
+megaFLOPS = 289.095815
+
+Matrix Size in bytes: 4096
+megaFLOPS = 156.248841
+
+Matrix Size in bytes: 8192
+megaFLOPS = 77.949222
+
+
+---------------------------
+
+Executing: run_experiment_kij()
+
+Matrix Size in bytes: 16
+megaFLOPS = 285.204991
+
+Matrix Size in bytes: 32
+megaFLOPS = 325.774351
+
+Matrix Size in bytes: 64
+megaFLOPS = 307.384739
+
+Matrix Size in bytes: 128
+megaFLOPS = 391.418419
+
+Matrix Size in bytes: 256
+megaFLOPS = 407.247307
+
+Matrix Size in bytes: 512
+megaFLOPS = 409.040797
+
+Matrix Size in bytes: 1024
+megaFLOPS = 415.080036
+
+Matrix Size in bytes: 2048
+megaFLOPS = 418.117427
+
+Matrix Size in bytes: 4096
+megaFLOPS = 416.776726
+
+Matrix Size in bytes: 8192
+megaFLOPS = 401.864400
+
+
+---------------------------
+
+Executing: run_experiment_jki()
+
+Matrix Size in bytes: 16
+megaFLOPS = 270.865076
+
+Matrix Size in bytes: 32
+megaFLOPS = 361.143244
+
+Matrix Size in bytes: 64
+megaFLOPS = 318.601142
+
+Matrix Size in bytes: 128
+megaFLOPS = 368.679689
+
+Matrix Size in bytes: 256
+megaFLOPS = 382.600281
+
+Matrix Size in bytes: 512
+megaFLOPS = 389.887910
+
+Matrix Size in bytes: 1024
+megaFLOPS = 393.746989
+
+Matrix Size in bytes: 2048
+megaFLOPS = 287.551249
+
+Matrix Size in bytes: 4096
+megaFLOPS = 155.862303
+
+Matrix Size in bytes: 8192
+megaFLOPS = 77.569682
+
+
+---------------------------
+
+Executing: run_experiment_jik()
+
+Matrix Size in bytes: 16
+megaFLOPS = 250.901678
+
+Matrix Size in bytes: 32
+megaFLOPS = 382.397754
+
+Matrix Size in bytes: 64
+megaFLOPS = 342.778717
+
+Matrix Size in bytes: 128
+megaFLOPS = 405.614634
+
+Matrix Size in bytes: 256
+megaFLOPS = 419.229090
+
+Matrix Size in bytes: 512
+megaFLOPS = 431.982588
+
+Matrix Size in bytes: 1024
+megaFLOPS = 433.300306
+
+Matrix Size in bytes: 2048
+megaFLOPS = 419.228937
+
+Matrix Size in bytes: 4096
+megaFLOPS = 418.114872
+
+Matrix Size in bytes: 8192
+megaFLOPS = 309.755621
+
