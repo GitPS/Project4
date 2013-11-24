@@ -8,6 +8,7 @@
 
 int main(int argc, char * argv[]) {
     int N;
+    int max_N = 1024;
     long long_N; // Needed to prevent overflow 
     double time;
     mtype_t *matrix_a = NULL;
@@ -17,10 +18,17 @@ int main(int argc, char * argv[]) {
     // Initialize the support library
     support_init();
     
+    /* Command line argument handling */
+    if(argc >= 2) {
+        if(is_valid_int(argv[1]) == 0){
+            max_N = (int)strtol(argv[1], NULL, 10);
+        }
+    }
+    
     /* run_experiment_ijk */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_ijk()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
@@ -48,7 +56,7 @@ int main(int argc, char * argv[]) {
     /* run_experiment_ikj */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_ikj()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
@@ -76,7 +84,7 @@ int main(int argc, char * argv[]) {
     /* run_experiment_kji */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_kji()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
@@ -104,7 +112,7 @@ int main(int argc, char * argv[]) {
     /* run_experiment_kij */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_kij()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
@@ -132,7 +140,7 @@ int main(int argc, char * argv[]) {
     /* run_experiment_jki */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_jki()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
@@ -160,7 +168,7 @@ int main(int argc, char * argv[]) {
     /* run_experiment_jik */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_jik()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix_a, N);
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);

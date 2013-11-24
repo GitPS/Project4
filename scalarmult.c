@@ -8,6 +8,7 @@
 
 int main(int argc, char * argv[]) {    
     int N;
+    int max_N = 1024;
     double time;
     mtype_t *matrix = NULL;
     mtype_t scalar = 1;
@@ -15,10 +16,17 @@ int main(int argc, char * argv[]) {
     // Initialize the support library
     support_init();
     
+    /* Command line argument handling */
+    if(argc >= 2) {
+        if(is_valid_int(argv[1]) == 0){
+            max_N = (int)strtol(argv[1], NULL, 10);
+        }
+    }
+    
     /* run_experiment_ij */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_ij()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix, N);
         time = run_experiment_ij(matrix, scalar, N);
         printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
@@ -35,7 +43,7 @@ int main(int argc, char * argv[]) {
     /* run_experiment_ji */
     printf("\n---------------------------\n\n");
     printf("Executing: run_experiment_ji()\n\n");
-    for(N = 2; N <= 1024;){
+    for(N = 2; N <= max_N;){
         allocate_matrix(&matrix, N);
         time = run_experiment_ji(matrix, scalar, N);
         printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
