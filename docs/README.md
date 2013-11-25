@@ -182,8 +182,11 @@ __Known Bugs and Problem Areas__
 * No bugs or problem areas are known at this time.
 
 __Raw Experimental Data__
-* For scalar multiplication see `scalarmult_10000.txt`
-* For matrix multiplication see `matrixmult_100.txt`
+* For scalar multiplication see `docs/scalarmult_10000.txt`
+* For matrix multiplication see `docs/matrixmult_100.txt`
+
+__Output From lstopo__
+* See `docs/hwloc_results.txt`
 
 __Graphs__
 
@@ -207,12 +210,12 @@ Which experiment(s) produces the best overall performance?  Why?
 
 Rank the six experiments from best to worst in terms of MFLOPS.
 
-* Matrix Multiplication `ijk`
-* Matrix Multiplication `jki`
-* Matrix Multiplication `kji`
-* Matrix Multiplication `kij`
-* Matrix Multiplication `jik`
-* Matrix Multiplication `ikj`
+* 1) Matrix Multiplication `ikj`
+* 2) Matrix Multiplication `ijk`
+* 3) Matrix Multiplication `jki`
+* 4) Matrix Multiplication `kji`
+* 5) Matrix Multiplication `kij`
+* 6) Matrix Multiplication `jik`
 
 Describe the cause of the divergence of performance between the experiments.
 
