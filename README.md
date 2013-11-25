@@ -24,9 +24,159 @@ The second command is `./matrixmult <N-limit>` where `<N-limit>` is an optional 
 
 __Test Cases__
 
+* Test 1 consisted of running the command `./scalarmult` with an iteration number set at 100,000.  This test created an accurate average runtime in megaFLOPS for scalur multiplication from 2 until 1024 increasing by powers of two for `N`.
+
+* Test 2 consisted of running the command `./matrixmult` with an iteration number set at 100.  This test created an accurate average runtime in megaFLOPS for matrix multiplication from 2 until 1024 increasing by powers of two for `N`.
+
+* Test 3 consisted of running `./scalarmult <num>` and `./matrixmult <num>` for various values of `N`.  These numbers included negative numbers and very large numbers.  The program used the proper value for `N` in all cases.
+
+* Test 4 consisted of running `./scalarmult <num>` and `./matrixmult <num>` for various invalid values of `N`.  These values consisted of invalid characters and invalid characters mixed with valid characters.  The program ignored the invalid input and used a default value of 1024 for `N`.
+
 __Examples__
 
-TODO
+The following example shows the output of `shell$ ./scalarmult 2`.  Note how each experiment only runs once since a max value for `N` is set to 2.
+````
+shell$ ./scalarmult 2
+
+---------------------------
+
+Executing: run_experiment_ij()
+
+Matrix Size in bytes: 16
+megaFLOPS = 61.662451
+
+
+---------------------------
+
+Executing: run_experiment_ji()
+
+Matrix Size in bytes: 16
+megaFLOPS = 63.291139
+````
+The following example shows the output of `shell$ ./matrixmult 2`.  Note how each experiment only runs once since a max value for `N` is set to 2.
+````
+shell$ ./matrixmult 2
+
+---------------------------
+
+Executing: run_experiment_ijk()
+
+Matrix Size in bytes: 16
+megaFLOPS = 199.975003
+
+
+---------------------------
+
+Executing: run_experiment_ikj()
+
+Matrix Size in bytes: 16
+megaFLOPS = 196.391310
+
+
+---------------------------
+
+Executing: run_experiment_kji()
+
+Matrix Size in bytes: 16
+megaFLOPS = 194.457949
+
+
+---------------------------
+
+Executing: run_experiment_kij()
+
+Matrix Size in bytes: 16
+megaFLOPS = 203.329521
+
+
+---------------------------
+
+Executing: run_experiment_jki()
+
+Matrix Size in bytes: 16
+megaFLOPS = 199.526126
+
+
+---------------------------
+
+Executing: run_experiment_jik()
+
+Matrix Size in bytes: 16
+megaFLOPS = 162.222448
+````
+The following example shows the output of `shell$ ./scalarmult invalid input`.  Note how the `invalid input` is ignored and the experiments run with a default size of 1024 for `N`. 
+````
+shell$ ./scalarmult invalid input
+
+---------------------------
+
+Executing: run_experiment_ij()
+
+Matrix Size in bytes: 16
+megaFLOPS = 49.091802
+
+Matrix Size in bytes: 32
+megaFLOPS = 54.624287
+
+Matrix Size in bytes: 64
+megaFLOPS = 50.039093
+
+Matrix Size in bytes: 128
+megaFLOPS = 66.913060
+
+Matrix Size in bytes: 256
+megaFLOPS = 67.028516
+
+Matrix Size in bytes: 512
+megaFLOPS = 113.668719
+
+Matrix Size in bytes: 1024
+megaFLOPS = 303.008783
+
+Matrix Size in bytes: 2048
+megaFLOPS = 299.837111
+
+Matrix Size in bytes: 4096
+megaFLOPS = 311.276311
+
+Matrix Size in bytes: 8192
+megaFLOPS = 296.175698
+
+
+---------------------------
+
+Executing: run_experiment_ji()
+
+Matrix Size in bytes: 16
+megaFLOPS = 213.675214
+
+Matrix Size in bytes: 32
+megaFLOPS = 213.191206
+
+Matrix Size in bytes: 64
+megaFLOPS = 135.889760
+
+Matrix Size in bytes: 128
+megaFLOPS = 207.605161
+
+Matrix Size in bytes: 256
+megaFLOPS = 233.463745
+
+Matrix Size in bytes: 512
+megaFLOPS = 277.711861
+
+Matrix Size in bytes: 1024
+megaFLOPS = 273.359800
+
+Matrix Size in bytes: 2048
+megaFLOPS = 186.629809
+
+Matrix Size in bytes: 4096
+megaFLOPS = 156.660171
+
+Matrix Size in bytes: 8192
+megaFLOPS = 50.882077
+````
 
 __Known Bugs and Problem Areas__
 * No bugs or problem areas are known at this time.
