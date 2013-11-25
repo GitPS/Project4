@@ -206,7 +206,7 @@ _Matrix Multiplication_
 
 Which experiment(s) produces the best overall performance?  Why?
 
-* The best overall performing experiments would be the `kji` and `jki` functions.  Initially they take ~300 megaFLOPS to execute, but as the matrix size increases the runtime actually decreases.  This is caused by the values being stored in memory which allows a faster lookup time. 
+* The best overall performing experiments would be the `ikj` and `jik` functions.  Initially they take ~300 megaFLOPS to execute, but as the matrix size increases the runtime actually decreases.  This is caused by the values being stored in memory which allows a faster lookup time. 
 
 Rank the six experiments from best to worst in terms of MFLOPS.
 
