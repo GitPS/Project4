@@ -5,6 +5,8 @@
  *
  */
 #define _GNU_SOURCE
+#include <string.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -184,10 +186,3 @@ double timer_to_double(hptimer_t ctime);
  *   Human readable string
  */
 char * human_readable(int bytes);
-
-/* Check if the provided char array can be converted to an integer 
- *   str : Char array to be checked
- * Returns 0 if can be converted to an integer, -1 otherwise. 
- * 
- */
-int is_valid_int(char *str);

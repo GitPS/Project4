@@ -61,3 +61,10 @@ double run_experiment_kij(mtype_t *matrix_a, mtype_t *matrix_b, mtype_t *matrix_
  *   N : Size of matrices
  */
 double run_experiment_kji(mtype_t *matrix_a, mtype_t *matrix_b, mtype_t *matrix_c, int N);
+/* Check if the provided char array can be converted to an integer 
+ *   str : Char array to be checked
+ * Returns 0 if can be converted to an integer, -1 otherwise. 
+ * 
+ */
+int is_valid_int(char *str);
+

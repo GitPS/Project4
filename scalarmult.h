@@ -26,3 +26,10 @@ double run_experiment_ij(mtype_t *matrix, mtype_t scalar, int N);
  *   N : Size of matrix 
  */
 double run_experiment_ji(mtype_t *matrix, mtype_t scalar, int N);
+
+/* Check if the provided char array can be converted to an integer 
+ *   str : Char array to be checked
+ * Returns 0 if can be converted to an integer, -1 otherwise. 
+ * 
+ */
+int is_valid_int(char *str);
