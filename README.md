@@ -181,6 +181,10 @@ megaFLOPS = 50.882077
 __Known Bugs and Problem Areas__
 * No bugs or problem areas are known at this time.
 
+__Raw Experimental Data__
+* For scalar multiplication see `scalarmult_10000.txt`.
+* For matrix multiplication see `matrixmult_100`.
+
 __Graphs__
 
 __Questions and Answers__
