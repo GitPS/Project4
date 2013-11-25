@@ -211,11 +211,11 @@ Which experiment(s) produces the best overall performance?  Why?
 Rank the six experiments from best to worst in terms of MFLOPS.
 
 * 1) Matrix Multiplication `ikj`
-* 2) Matrix Multiplication `ijk`
-* 3) Matrix Multiplication `jki`
+* 2) Matrix Multiplication `jik`
+* 3) Matrix Multiplication `kij`
 * 4) Matrix Multiplication `kji`
-* 5) Matrix Multiplication `kij`
-* 6) Matrix Multiplication `jik`
+* 5) Matrix Multiplication `jki`
+* 6) Matrix Multiplication `ijk`
 
 Describe the cause of the divergence of performance between the experiments.
 
