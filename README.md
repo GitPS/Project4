@@ -31,3 +31,40 @@ TODO
 __Known Bugs and Problem Areas__
 * No bugs or problem areas are known at this time.
 
+__Graphs__
+
+__Questions and Answers__
+
+_Scalar Multiplication_
+
+Which experiment produces the best overall performance?
+
+* The best overall performing experiment was when we had the `i` value in our outer loop and the `j` value in our inner loop.  This would be the `run_experiment_ij()` function.
+
+Describe the cause of the divergence of performance between the experiments.
+
+*  The reason there is a difference in the divergence between the two expirments is based on how memory is managed by the system.
+
+_Matrix Multiplication_
+
+Which experiment(s) produces the best overall performance?  Why?
+
+* The best overall performing experiments would be the `kji` and `jki` functions.  Initially they take ~300 megaFLOPS to execute, but as the matrix size increases the runtime actually decreases.  This is caused by the values being stored in memory which allows a faster lookup time. 
+
+Rank the six experiments from best to worst in terms of MFLOPS.
+
+* Matrix Multiplication `ijk`
+* Matrix Multiplication `jki`
+* Matrix Multiplication `kji`
+* Matrix Multiplication `kij`
+* Matrix Multiplication `jik`
+* Matrix Multiplication `ikj`
+
+Describe the cause of the divergence of performance between the experiments.
+
+* There is a relatively equal divergence pattern for all of the experiments except for `ijk`.  The cause of the divergence is caused by main memory not having quick access to the value needed for the next calculation.  `ijk` starts out much better than the rest because it, initially, has quick reference to the values needed for the calculations. 
+
+You may notice that some of the experiments pair up.  Why does that happen?
+
+
+
