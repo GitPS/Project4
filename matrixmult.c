@@ -33,7 +33,7 @@ int main(int argc, char * argv[]) {
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_ijk(matrix_a, matrix_b, matrix_c, N);
-        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N * N);
         long_N = N;
         printf("megaFLOPS = %f\n\n", (2 * long_N * long_N * long_N) / time / 1000000);
         N = N*2;
@@ -61,7 +61,7 @@ int main(int argc, char * argv[]) {
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_ikj(matrix_a, matrix_b, matrix_c, N);
-        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N * N);
         long_N = N;
         printf("megaFLOPS = %f\n\n", (2 * long_N * long_N * long_N) / time / 1000000);
         N = N*2;
@@ -89,7 +89,7 @@ int main(int argc, char * argv[]) {
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_kji(matrix_a, matrix_b, matrix_c, N);
-        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N * N);
         long_N = N;
         printf("megaFLOPS = %f\n\n", (2 * long_N * long_N * long_N) / time / 1000000);
         N = N*2;
@@ -117,7 +117,7 @@ int main(int argc, char * argv[]) {
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_kij(matrix_a, matrix_b, matrix_c, N);
-        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N * N);
         long_N = N;
         printf("megaFLOPS = %f\n\n", (2 * long_N * long_N * long_N) / time / 1000000);
         N = N*2;
@@ -145,7 +145,7 @@ int main(int argc, char * argv[]) {
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_jki(matrix_a, matrix_b, matrix_c, N);
-        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N * N);
         long_N = N;
         printf("megaFLOPS = %f\n\n", (2 * long_N * long_N * long_N) / time / 1000000);
         N = N*2;
@@ -173,7 +173,7 @@ int main(int argc, char * argv[]) {
         allocate_matrix(&matrix_b, N);
         allocate_matrix(&matrix_c, N);
         time = run_experiment_jik(matrix_a, matrix_b, matrix_c, N);
-        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N);
+        printf("Matrix Size in bytes: %lu\n", sizeof(mtype_t) * N * N);
         long_N = N;
         printf("megaFLOPS = %f\n\n", (2 * long_N * long_N * long_N) / time / 1000000);
         N = N*2;
