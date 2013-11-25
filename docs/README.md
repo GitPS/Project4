@@ -42,7 +42,7 @@ shell$ ./scalarmult 2
 
 Executing: run_experiment_ij()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 61.662451
 
 
@@ -50,7 +50,7 @@ megaFLOPS = 61.662451
 
 Executing: run_experiment_ji()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 63.291139
 ````
 The following example shows the output of `shell$ ./matrixmult 2`.  Note how each experiment only runs once since a max value for `N` is set to 2.
@@ -61,7 +61,7 @@ shell$ ./matrixmult 2
 
 Executing: run_experiment_ijk()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 199.975003
 
 
@@ -69,7 +69,7 @@ megaFLOPS = 199.975003
 
 Executing: run_experiment_ikj()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 196.391310
 
 
@@ -77,7 +77,7 @@ megaFLOPS = 196.391310
 
 Executing: run_experiment_kji()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 194.457949
 
 
@@ -93,7 +93,7 @@ megaFLOPS = 203.329521
 
 Executing: run_experiment_jki()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 199.526126
 
 
@@ -101,7 +101,7 @@ megaFLOPS = 199.526126
 
 Executing: run_experiment_jik()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 162.222448
 ````
 The following example shows the output of `shell$ ./scalarmult invalid input`.  Note how the `invalid input` is ignored and the experiments run with a default size of 1024 for `N`. 
@@ -112,34 +112,34 @@ shell$ ./scalarmult invalid input
 
 Executing: run_experiment_ij()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 49.091802
 
-Matrix Size in bytes: 32
+Matrix Size in bytes: 128
 megaFLOPS = 54.624287
 
-Matrix Size in bytes: 64
+Matrix Size in bytes: 512
 megaFLOPS = 50.039093
 
-Matrix Size in bytes: 128
+Matrix Size in bytes: 2048
 megaFLOPS = 66.913060
 
-Matrix Size in bytes: 256
+Matrix Size in bytes: 8192
 megaFLOPS = 67.028516
 
-Matrix Size in bytes: 512
+Matrix Size in bytes: 32768
 megaFLOPS = 113.668719
 
-Matrix Size in bytes: 1024
+Matrix Size in bytes: 131072
 megaFLOPS = 303.008783
 
-Matrix Size in bytes: 2048
+Matrix Size in bytes: 524288
 megaFLOPS = 299.837111
 
-Matrix Size in bytes: 4096
+Matrix Size in bytes: 2097152
 megaFLOPS = 311.276311
 
-Matrix Size in bytes: 8192
+Matrix Size in bytes: 8388608
 megaFLOPS = 296.175698
 
 
@@ -147,34 +147,34 @@ megaFLOPS = 296.175698
 
 Executing: run_experiment_ji()
 
-Matrix Size in bytes: 16
+Matrix Size in bytes: 32
 megaFLOPS = 213.675214
 
-Matrix Size in bytes: 32
+Matrix Size in bytes: 128
 megaFLOPS = 213.191206
 
-Matrix Size in bytes: 64
+Matrix Size in bytes: 512
 megaFLOPS = 135.889760
 
-Matrix Size in bytes: 128
+Matrix Size in bytes: 2048
 megaFLOPS = 207.605161
 
-Matrix Size in bytes: 256
+Matrix Size in bytes: 8192
 megaFLOPS = 233.463745
 
-Matrix Size in bytes: 512
+Matrix Size in bytes: 32768
 megaFLOPS = 277.711861
 
-Matrix Size in bytes: 1024
+Matrix Size in bytes: 131072
 megaFLOPS = 273.359800
 
-Matrix Size in bytes: 2048
+Matrix Size in bytes: 524388
 megaFLOPS = 186.629809
 
-Matrix Size in bytes: 4096
+Matrix Size in bytes: 2097152
 megaFLOPS = 156.660171
 
-Matrix Size in bytes: 8192
+Matrix Size in bytes: 8388608
 megaFLOPS = 50.882077
 ````
 
@@ -200,13 +200,13 @@ Which experiment produces the best overall performance?
 
 Describe the cause of the divergence of performance between the experiments.
 
-*  The reason there is a difference in the divergence between the two expirments is based on how memory is managed by the system.  The divergence in the graph is caused by the values needed not being stored in a quick access part of memory.
+*  The reason there is a difference in the divergence between the two expirments is based on how the matrix is layed out in memory.  My computer has an L2 cache with a size of 256KB.  You can see from the graph that up until the matrix size reaches 256KB (262144 bytes) the program runs about equal.  This is caused by the program using the L1 and L2 to store most of the values.  This results in fast lookup times for either experiment.  When we reach a matrix size of 512KB (524288 bytes) we see that the performance begins to rapidly decline for the `ji` experment.  THe reason this experiment diverges is because the program needs to "hop" around in memory to access each value in the array.  Since it can no longer store the values in L1 and L2 it is now relying on L3 cache and main memory for the data it needs.  This is where the slowdown comes in.  The `ij` experiment is stored in a more continous chunk of memory which requires far less "hopping" around to get the needed value.  That is why we see this experiment continue to run efficiently. 
 
 _Matrix Multiplication_
 
 Which experiment(s) produces the best overall performance?  Why?
 
-* The best overall performing experiments would be the `ikj` and `jik` functions.  
+* The best overall performing experiments would be the `ikj` and `jik` functions.  The reason that these two experiments is similiar to why the scalar multiplication experiments peformed in this manner.  Our memory is allocated in a chunk that will be stored in L1, L2, L3, and main memory.  Due to how matrices are stored with using C we have our needed values stored in memory in a manner that they are near eachother.  This results in them all being stored in some form of cache until they are needed by the program.  For experiments `jki` and `kji` our values are spread out in memory so much that we cannot efficiently store all the needed values in cache.
 
 Rank the six experiments from best to worst in terms of MFLOPS.
 
@@ -219,11 +219,11 @@ Rank the six experiments from best to worst in terms of MFLOPS.
 
 Describe the cause of the divergence of performance between the experiments.
 
-* There is a relatively equal divergence pattern for all of the experiments except for `ijk`.  The cause of the divergence is caused by main memory not having quick access to the value needed for the next calculation.  `ijk` starts out much better than the rest because it, initially, has quick reference to the values needed for the calculations as they are the first values of the matrix as it resides in memory. 
+* The cause of divergence is the same as the scalar multiplication above.  When the program can no longer store all of the needed values in cache it needs to start using main memory to store these values.  This will cause the lookup time to be much slower if the needed value does not have a good locality compared to the previously used value.  If the locality is good there will be no decrease in performance because the values will be stored in cache.
 
 You may notice that some of the experiments pair up.  Why does that happen?
 
-*  The majority of the graphs initialy start out at around the same MFLOPS.  The only exception to this would be the `ijk` experiment.  This graph starts at a much lower MFLOPS because the neede values are stored in location of memory that does not require an extensive lookup.  The other graphs follow similiar paths as eachother as they load/access values into memory. 
+*  The graphs will pair up when they are using similiar values for calculations.  Depending on the experiment running the values needed will have different localities.  When a graph pairs up with another graph it means that the locality of values needed is similiar to the comparable graph. 
 
 
 
