@@ -43,7 +43,7 @@ Which experiment produces the best overall performance?
 
 Describe the cause of the divergence of performance between the experiments.
 
-*  The reason there is a difference in the divergence between the two expirments is based on how memory is managed by the system.
+*  The reason there is a difference in the divergence between the two expirments is based on how memory is managed by the system.  The divergence in the graph is caused by the values needed not being stored in a quick access part of memory.
 
 _Matrix Multiplication_
 
@@ -62,9 +62,11 @@ Rank the six experiments from best to worst in terms of MFLOPS.
 
 Describe the cause of the divergence of performance between the experiments.
 
-* There is a relatively equal divergence pattern for all of the experiments except for `ijk`.  The cause of the divergence is caused by main memory not having quick access to the value needed for the next calculation.  `ijk` starts out much better than the rest because it, initially, has quick reference to the values needed for the calculations. 
+* There is a relatively equal divergence pattern for all of the experiments except for `ijk`.  The cause of the divergence is caused by main memory not having quick access to the value needed for the next calculation.  `ijk` starts out much better than the rest because it, initially, has quick reference to the values needed for the calculations as they are the first values of the matrix as it resides in memory. 
 
 You may notice that some of the experiments pair up.  Why does that happen?
+
+*  The majority of the graphs initialy start out at around the same MFLOPS.  The only exception to this would be the `ijk` experiment.  This graph starts at a much lower MFLOPS because the neede values are stored in location of memory that does not require an extensive lookup.  The other graphs follow similiar paths as eachother as they load/access values into memory. 
 
 
 
